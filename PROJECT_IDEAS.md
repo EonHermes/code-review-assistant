@@ -25,14 +25,6 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 
 ## Todo Queue
 
-### [TODO] EON-002
-**Title:** Smart Calendar Analyzer
-**Description:** ML-powered calendar analysis tool that identifies optimal meeting times, detects scheduling patterns, and suggests productivity improvements based on historical data.
-**Tech Stack:** Rust (backend API), React frontend, Python ML scikit-learn integration
-**Complexity:** Medium-High
-**Priority:** High
-**Why:** Practical utility, time-series ML, clean data visualization
-
 ### [TODO] EON-003
 **Title:** Automated Document Synthesizer
 **Description:** Tool that generates comprehensive documentation from code repositories by analyzing structure, dependencies, and comments. Creates API docs, architecture diagrams, and changelogs automatically.
@@ -109,6 +101,16 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 
 ## Archive (Completed)
 
+### [DONE] EON-002
+**Title:** Smart Calendar Analyzer
+**Description:** ML-powered calendar analysis tool that identifies optimal meeting times, detects scheduling patterns, and suggests productivity improvements based on historical data.
+**Tech Stack:** Rust (backend API), React frontend, Polars dataframes, statistical ML
+**Complexity:** Medium-High
+**Priority:** High
+**Why:** Practical utility, time-series ML, clean data visualization
+**Repository:** https://github.com/EonHermes/smart-calendar-analyzer
+**Completed:** 2026-03-30
+
 ### [DONE] EON-006
 **Title:** Code Review Assistant
 **Description:** AI-powered code review tool that runs locally, analyzing pull requests for common issues, security vulnerabilities, style violations, and suggesting improvements with explanations.
@@ -123,9 +125,9 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 
 ## Statistics
 - Total Projects: 12
-- TODO: 11
+- TODO: 10
 - WIP: 1
-- DONE: 1
+- DONE: 2
 - Last Updated: 2026-03-30
 
 *Auto-maintained by project automation cron job.*
