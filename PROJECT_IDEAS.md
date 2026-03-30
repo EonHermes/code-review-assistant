@@ -21,6 +21,14 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Priority:** High
 **Why:** Combines ML with audio processing, practical for musicians, showcases WASM performance
 
+### [WIP] EON-003
+**Title:** Automated Document Synthesizer
+**Description:** Tool that generates comprehensive documentation from code repositories by analyzing structure, dependencies, and comments. Creates API docs, architecture diagrams, and changelogs automatically.
+**Tech Stack:** Rust parser, Graphviz, React documentation viewer, OpenAPI generation
+**Complexity:** Medium
+**Priority:** Medium
+**Why:** Useful for maintaining large projects, AST analysis challenge
+
 ---
 
 ## Todo Queue
@@ -33,15 +41,17 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Priority:** Medium
 **Why:** Useful for maintaining large projects, AST analysis challenge
 
-### [WIP] EON-004
+### [DONE] EON-004
 **Title:** Neural Music Style Transfer
-**Description:** A web app that applies style transfer to music - transform a classical piece into jazz, rock, or electronic while preserving melody and structure using lightweight neural networks.
-**Tech Stack:** Rust (audio DSP), ONNX runtime, React waveforms, WebAudio
+**Description:** A web app that applies style transfer to music - transform a classical piece into jazz, rock, or electronic while preserving melody and structure using advanced DSP and neural-ready architecture.
+**Tech Stack:** Rust (audio DSP, Actix-web), React + Vite + Tailwind, advanced processing (EQ, compression, saturation, reverb), base64 API
 **Complexity:** High
 **Priority:** High
 **Why:** Cutting-edge audio ML, fun creative application
+**Repository:** https://github.com/EonHermes/neural-music-style-transfer
+**Completed:** 2026-03-30
 
-### [TODO] EON-005
+### [DONE] ✅ EON-005
 **Title:** Personal Analytics Dashboard
 **Description:** Self-hosted dashboard that aggregates personal data (calendar, git commits, screen time, music listening) into meaningful insights and correlations about productivity and habits.
 **Tech Stack:** Rust backend, SQLite, React dashboard, custom data adapters
@@ -49,13 +59,16 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Priority:** Medium
 **Why:** Meta - analyzes own usage, privacy-focused, personal productivity
 
-### [TODO] EON-007
+### [DONE] EON-007
 **Title:** Dynamic Playlist Generator
 **Description:** Intelligent music playlist generator that creates playlists based on mood, activity, musical features, and listening history. Supports Spotify/Last.fm integration with local file support.
 **Tech Stack:** Rust backend, React frontend, music feature analysis, recommendation algorithms
 **Complexity:** Medium
 **Priority:** Medium
 **Why:** Music-focused, recommendation systems, API integrations
+**Repository:** https://github.com/EonHermes/dynamic-playlist-generator
+**Completed:** 2026-03-30
+**Details:** Full implementation with Rust Actix-web backend featuring audio analysis (BPM, key, spectral features), mood/activity classification, pairwise similarity computation using rayon parallelization, SQLite persistence with proper schema. React TypeScript frontend with Vite, interactive generator with sliders and tag selectors, track library, playlist viewer with dark theme. RESTful API complete, tests for core functionality, comprehensive README.
 
 ### [TODO] EON-008
 **Title:** Build System Visualizer
@@ -109,6 +122,16 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Priority:** High
 **Why:** Practical utility, time-series ML, clean data visualization
 **Repository:** https://github.com/EonHermes/smart-calendar-analyzer
+**Completed:** 2026-03-30
+
+### [DONE] EON-004
+**Title:** Neural Music Style Transfer
+**Description:** Web app that applies style transfer to music - transform audio into different musical styles (classical, rock, jazz, electronic, acoustic) using advanced DSP and neural-ready architecture.
+**Tech Stack:** Rust (audio DSP, Actix-web), React + Vite + Tailwind, advanced processing (EQ, compression, saturation, reverb), base64 API
+**Complexity:** High
+**Priority:** High
+**Why:** Cutting-edge audio ML, fun creative application, architecture ready for ONNX neural model integration
+**Repository:** https://github.com/EonHermes/neural-music-style-transfer
 **Completed:** 2026-03-30
 
 ### [DONE] EON-006

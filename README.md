@@ -1,119 +1,72 @@
-# Smart Calendar Analyzer (EON-002)
+# Automated Document Synthesizer (EON-003)
 
-ML-powered calendar analysis tool that identifies optimal meeting times, detects scheduling patterns, and suggests productivity improvements based on historical data.
-
-## Tech Stack
-
-- **Backend:** Rust (Actix-web) - high-performance API with zero-cost abstractions
-- **Frontend:** React + TypeScript + Vite
-- **ML/Data Analysis:** Polars (Rust DataFrame library) for statistical analysis
-- **Visualization:** Recharts (React) for interactive charts
-- **Data Format:** iCalendar (.ics) import/export
-- **Testing:** cargo test, Jest/Vitest for frontend
+A powerful tool that automatically generates comprehensive documentation from code repositories by analyzing structure, dependencies, comments, and Git history.
 
 ## Features
 
-- Import calendar data from .ics files or Google Calendar export
-- Analyze meeting patterns (time of day, day of week, duration, attendees)
-- Identify optimal meeting times based on your historical availability and productivity
-- Detect scheduling conflicts and inefficiencies (too many meetings, back-to-back, etc.)
-- Generate productivity insights and recommendations
-- Visual dashboard with charts and statistics
-- Export suggestions and reports
+- **Multi-language support**: Rust (Cargo), TypeScript/JavaScript (npm), Python (poetry/setuptools)
+- **AST-based analysis**: Deep parsing of source code to extract modules, types, functions, and documentation comments
+- **Dependency graphs**: Generate interactive Graphviz architecture diagrams
+- **API documentation**: Auto-generate OpenAPI specs from route annotations/comments
+- **Changelog generation**: Create formatted changelogs from Git commit history with conventional commits support
+- **Cross-reference detection**: Identify relationships between modules and components
+- **Export formats**: Markdown, HTML, JSON
+- **Fast**: Rust WASM core for parallel analysis
 
-## Architecture
+## Tech Stack
 
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│   .ics File │────▶│  Rust Backend │────▶│   SQLite    │
-│    Import   │     │   (Actix)    │     │   Storage   │
-└─────────────┘     └──────────────┘     └─────────────┘
-                                                 │
-                                                 ▼
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  React UI   │◀────│  REST API    │◀────│   Polars    │
-│  (Vite+TS)  │     │              │     │   Analytics │
-└─────────────┘     └──────────────┘     └─────────────┘
-```
+**Backend**: Rust (clap, syn, walkdir, petgraph, graphviz, git2, serde, anyhow)
+**Frontend**: React + TypeScript + Vite + Tailwind + ReactFlow (for graph visualization)
+**Testing**: Rust integration tests, Jest for frontend
 
-## Getting Started
-
-### Prerequisites
-
-- Rust 1.70+ (via rustup)
-- Node.js 18+
-- pnpm or npm
-
-### Backend Setup
+## Quick Start
 
 ```bash
-cd backend
+# Clone and build
+git clone https://github.com/EonHermes/automated-document-synthesizer.git
+cd automated-document-synthesizer
 cargo build --release
-cargo run
-```
 
-API will start on http://localhost:8080
+# Analyze a project
+cargo run -- --path ../my-project --output docs/
 
-### Frontend Setup
-
-```bash
+# Start the frontend dev server
 cd frontend
 npm install
 npm run dev
 ```
 
-Frontend will start on http://localhost:5173
+## Configuration
 
-## API Endpoints
+Create a `docs.yaml` in your project root:
 
-- `POST /api/import` - Import .ics calendar file
-- `GET /api/events` - Get all calendar events
-- `GET /api/insights` - Get ML-powered insights and recommendations
-- `GET /api/statistics` - Get aggregated statistics
-- `GET /api/optimal-times` - Get optimal meeting time suggestions
-- `DELETE /api/events` - Clear all data
-
-## Testing
-
-```bash
-# Backend tests
-cargo test
-
-# Frontend tests
-npm test
+```yaml
+exclude:
+  - target
+  - node_modules
+  - .git
+include:
+  - src
+  - lib
+api_detection:
+  auto: true
+  frameworks:
+    - actix-web
+    - rocket
+    - axum
+    - express
+    - fastapi
 ```
 
-## Project Structure
+## Examples
 
-```
-smart-calendar-analyzer/
-├── backend/
-│   ├── src/
-│   │   ├── main.rs
-│   │   ├── api.rs
-│   │   ├── analysis.rs
-│   │   ├── model.rs
-│   │   └── db.rs
-│   ├── Cargo.toml
-│   └── tests/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── App.tsx
-│   ├── index.html
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── vite.config.ts
-├── README.md
-└── .gitignore
-```
+The tool generates:
+- `architecture.png` - dependency graph
+- `modules.md` - module structure with functions and types
+- `api.json` - OpenAPI 3.0 specification
+- `changelog.md` - conventional commits formatted changelog
+- `index.html` - interactive documentation viewer
 
 ## License
 
 MIT
-
-## Author
-
-Built by EonHermes (Daniel Lindestad's AI Assistant)

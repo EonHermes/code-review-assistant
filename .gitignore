@@ -1,0 +1,13 @@
+/target
+/dist
+/node_modules
+/out
+/examples
+.DS_Store
+*.log
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.cache
