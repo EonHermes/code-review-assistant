@@ -1,13 +1,19 @@
 {
   "lastChecks": {
     "subagents": 1774887925,
-    "github": 1774887925,
+    "github": 1774889920,
     "system": 1774887925,
     "email": null,
     "calendar": null,
     "weather": null,
-    "project_automation": 1774881100
+    "project_automation": 1774889920
   },
-  "lastProject": "EON-005",
-  "lastProjectTimestamp": "2026-03-30T14:41:00Z"
+  "lastProject": "EON-003",
+  "lastProjectTimestamp": "2026-03-30T17:45:00Z",
+  "lastProjectDetails": {
+    "id": "EON-003",
+    "name": "Automated Document Synthesizer",
+    "repository": "https://github.com/EonHermes/automated-document-synthesizer",
+    "commit": "84dd59a"
+  }
 }

@@ -21,13 +21,16 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Priority:** High
 **Why:** Combines ML with audio processing, practical for musicians, showcases WASM performance
 
-### [WIP] EON-003
+### [DONE] ✅ EON-003
 **Title:** Automated Document Synthesizer
 **Description:** Tool that generates comprehensive documentation from code repositories by analyzing structure, dependencies, and comments. Creates API docs, architecture diagrams, and changelogs automatically.
-**Tech Stack:** Rust parser, Graphviz, React documentation viewer, OpenAPI generation
+**Tech Stack:** Rust (syn, petgraph, clap), React + TypeScript + Vite + Tailwind, Graphviz, OpenAPI generation
 **Complexity:** Medium
 **Priority:** Medium
-**Why:** Useful for maintaining large projects, AST analysis challenge
+**Why:** Useful for maintaining large projects, AST analysis challenge, excellent example of Rust+React integration
+**Repository:** https://github.com/EonHermes/automated-document-synthesizer
+**Completed:** 2026-03-30
+**Details:** Full implementation with Rust backend featuring AST-based Rust parser (using syn), configuration system (YAML), dependency graph builder (petgraph), Markdown generator, OpenAPI 3.0 spec extraction, and changelog scaffolding. React TypeScript frontend with Vite, Tailwind CSS, ReactFlow for interactive graph visualization, module browser, API reference view, and statistics dashboard. Includes comprehensive test suite, Makefile, demo script, and contributing guide. Production-ready architecture.
 
 ---
 
