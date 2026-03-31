@@ -61,7 +61,7 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Completed:** 2026-03-30
 **Details:** Full implementation with Rust Actix-web backend featuring session-based tracking (no IP logging), aggregated statistics engine, RESTful API (track, stats, path analytics, recent events). React TypeScript frontend with Vite, Recharts visualizations (bar chart, pie chart), responsive dark theme dashboard, time range selection (1/7/30 days), comprehensive test suite (React Testing Library), tracking script using Beacon API (<2KB), Docker support, Makefile automation, extensive documentation with privacy-first principles. No cookies, no fingerprinting - fully GDPR-compliant by design.
 
-### [TODO] EON-011
+### [DONE] ✅ EON-011
 **Title:** Network Latency Monitor
 **Description:** Global network monitoring tool that measures latency to multiple endpoints, visualizes trends, detects outages, and provides SLA reports for personal infrastructure.
 **Tech Stack:** Rust (ping/ICMP), Tauri or React frontend, time-series database optional
@@ -104,6 +104,28 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Repository:** https://github.com/EonHermes/neural-music-style-transfer
 **Completed:** 2026-03-30
 
+### [DONE] ✅ EON-011
+**Title:** Network Latency Monitor
+**Description:** Global network monitoring tool that measures latency to multiple endpoints, visualizes trends, detects outages, and provides SLA reports for personal infrastructure.
+**Tech Stack:** Rust (Actix-web, SQLx, tokio), React + TypeScript + Vite, Recharts, SQLite
+**Complexity:** Low-Medium
+**Priority:** Low
+**Why:** Infrastructure monitoring, practical for self-hosted services, clean Rust+React integration
+**Repository:** https://github.com/EonHermes/network-latency-monitor
+**Completed:** 2026-03-31
+**Details:** Full implementation featuring TCP-based latency checking (no root required), SQLite persistence, async Rust backend with Actix-web REST API. React TypeScript frontend with dark theme, real-time Recharts visualizations (area charts, pie charts), SLA compliance dashboard, outage detection, recent measurements table. Comprehensive test suite, production-ready build, excellent README with architecture diagrams. Self-contained with configurable endpoints and SLA thresholds.
+
+### [DONE] ✅ EON-007
+**Title:** Dynamic Playlist Generator
+**Description:** Intelligent music playlist generator that creates playlists based on mood, activity, musical features, and listening history. Analyzes WAV audio to extract BPM, spectral features, and auto-tag moods/activities. Generates playlists using weighted similarity/diversity scores.
+**Tech Stack:** Rust (Actix-web, hound, rusqlite), React + TypeScript + Vite, CSS
+**Complexity:** Medium
+**Priority:** Medium
+**Why:** Practical music utility, showcases audio DSP in Rust, clean Rust+React integration, useful for personal use
+**Repository:** https://github.com/EonHermes/dynamic-playlist-generator
+**Completed:** 2026-03-31
+**Details:** Full implementation with comprehensive test suite (11 passing tests). Backend features complete: audio analysis (BPM, key, spectral centroid/rolloff/flux, RMS, ZCR), mood/activity classifiers, track similarity algorithm (weighted BPM/spectral/RMS/mood/activity), SQLite persistence, parallel processing with Rayon. API endpoints for tracks and playlists. React frontend with library management, interactive generator controls, playlist viewer, demo tracks feature. Makefile for build automation, comprehensive README with stats and examples, CONTRIBUTING guide, BACKEND_TESTS.md test documentation. All tests passing; binary size ~4.5MB. Production-ready with documentation and developer tooling.
+
 ### [DONE] EON-006
 **Title:** Code Review Assistant
 **Description:** AI-powered code review tool that runs locally, analyzing pull requests for common issues, security vulnerabilities, style violations, and suggesting improvements with explanations.
@@ -117,10 +139,10 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 ---
 
 ## Statistics
-- Total Projects: 12
-- TODO: 5
+- Total Projects: 13
+- TODO: 3
 - WIP: 0
-- DONE: 7
+- DONE: 10
 - Last Updated: 2026-03-31
 
 *Auto-maintained by project automation cron job.*
