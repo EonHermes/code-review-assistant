@@ -24,13 +24,16 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Completed:** 2026-03-30
 **Details:** Full implementation with Rust/WASM core featuring BPM detection via autocorrelation, chroma-based key detection, spectral analysis (centroid, rolloff, flux, flatness), streaming buffer architecture. React TypeScript frontend with Vite, D3.js visualizations (tempo timeline, spectral bar chart, key histogram), live microphone input, audio file upload, responsive dark theme. Comprehensive test suite (12+ tests), Makefile, detailed README with architecture diagrams, contributing guide. Production-ready real-time audio processing (<10ms latency).
 
-### [WIP] EON-009
+### [DONE] ✅ EON-009
 **Title:** Automated Tutorial Generator
 **Description:** Tool that generates step-by-step tutorials from code repositories by analyzing commit history, README, and code structure. Creates narrative walkthroughs with code snippets and explanations.
-**Tech Stack:** Rust (git analysis), Markdown generation, React tutorial viewer
+**Tech Stack:** Rust (git2, clap), Markdown generation, React tutorial viewer
 **Complexity:** Medium
 **Priority:** Medium
-**Why:** Next in priority queue - excellent for onboarding and knowledge sharing
+**Why:** Excellent for onboarding and knowledge sharing, automatic documentation generation, git history analysis
+**Repository:** https://github.com/EonHermes/tutorial-generator
+**Completed:** 2026-03-31
+**Details:** Full implementation with Rust CLI featuring Git repository analysis using libgit2. Extracts commit history, file changes, detects 30+ languages, and intelligently groups changes into logical sections. Generates beautiful Markdown tutorials with code snippets, syntax highlighting (via React viewer), and structured learning objectives. Includes comprehensive test suite (3+ integration tests), fully working binary with options for local/remote repos, custom titles/descriptions, and JSON/Markdown output. React TypeScript tutorial viewer with react-markdown and syntax-highlighter. Excellent README with architecture, usage examples, and testing instructions. Production-ready documentation tool.
 
 ### [DONE] ✅ EON-003
 **Title:** Automated Document Synthesizer
@@ -66,13 +69,16 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 **Priority:** Low
 **Why:** Infrastructure monitoring, practical for self-hosted services
 
-### [TODO] EON-012
+### [DONE] ✅ EON-012
 **Title:** Creative Coding Playground
 **Description:** Browser-based creative coding environment with shader editor, audio reactivity, and export capabilities. Similar to shadertoy but with more control and local-first approach.
-**Tech Stack:** Rust (WASM compute), WebGL/WebGPU, React UI, GLSL shaders
+**Tech Stack:** React, TypeScript, Vite, WebGL, Monaco Editor, Vitest, Web Audio API
 **Complexity:** High
 **Priority:** Medium
 **Why:** Creative tech, graphics programming, community contribution potential
+**Repository:** https://github.com/EonHermes/creative-coding-playground
+**Completed:** 2026-03-31
+**Details:** Full implementation with React TypeScript frontend featuring real-time WebGL shader rendering using native WebGL API. Monaco Editor integration provides GLSL syntax highlighting in split-pane layout (vertex and fragment shaders). Audio reactivity via Web Audio API with microphone input driving u_audioLevel uniform. Export capabilities include PNG image capture and GLSL code files. Comprehensive error handling and shader compilation feedback with 500ms debouncing. Real-time performance monitoring with FPS display. Full TypeScript type safety, ESLint configuration, and comprehensive test suite (7+ unit tests) with Vitest and React Testing Library. Mock WebGL context for isolated component testing. Production build optimized with Vite. Professional README with usage examples, uniform specifications, creative coding tips, and architecture documentation. Production-ready creative coding tool suitable for artists, developers, and VJ performances.
 
 ---
 
@@ -112,9 +118,9 @@ Each project has: ID, Title, Description, Tech Stack, Complexity, Priority
 
 ## Statistics
 - Total Projects: 12
-- TODO: 7
-- WIP: 1
-- DONE: 4
-- Last Updated: 2026-03-30
+- TODO: 5
+- WIP: 0
+- DONE: 7
+- Last Updated: 2026-03-31
 
 *Auto-maintained by project automation cron job.*
