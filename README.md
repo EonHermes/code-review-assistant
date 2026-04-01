@@ -1,72 +1,90 @@
-# Automated Document Synthesizer (EON-003)
+# EON-017: Automated Documentation Generator
 
-A powerful tool that automatically generates comprehensive documentation from code repositories by analyzing structure, dependencies, comments, and Git history.
+An intelligent documentation system that parses Rust and TypeScript codebases to generate comprehensive, up-to-date documentation with examples, cross-references, and architecture diagrams.
 
 ## Features
 
-- **Multi-language support**: Rust (Cargo), TypeScript/JavaScript (npm), Python (poetry/setuptools)
-- **AST-based analysis**: Deep parsing of source code to extract modules, types, functions, and documentation comments
-- **Dependency graphs**: Generate interactive Graphviz architecture diagrams
-- **API documentation**: Auto-generate OpenAPI specs from route annotations/comments
-- **Changelog generation**: Create formatted changelogs from Git commit history with conventional commits support
-- **Cross-reference detection**: Identify relationships between modules and components
-- **Export formats**: Markdown, HTML, JSON
-- **Fast**: Rust WASM core for parallel analysis
+- **Rust code parsing** using `syn` and `quote` crates
+- **TypeScript/JavaScript parsing** with Tree-sitter
+- **Automatic example extraction** from test files
+- **Cross-reference linking** between modules and types
+- **Mermaid.js diagram generation** for architecture and data flows
+- **CI/CD integration** ready (GitHub Actions)
+- **CLI and library** usage modes
+- **Markdown output** with beautiful formatting
 
 ## Tech Stack
 
-**Backend**: Rust (clap, syn, walkdir, petgraph, graphviz, git2, serde, anyhow)
-**Frontend**: React + TypeScript + Vite + Tailwind + ReactFlow (for graph visualization)
-**Testing**: Rust integration tests, Jest for frontend
+- **Backend**: Rust (async, clap, syn, quote, tree-sitter)
+- **Frontend**: TypeScript + React (dashboard for viewing docs)
+- **Database**: None (static file generation)
+- **CI**: GitHub Actions
+- **Diagrams**: Mermaid.js
+
+## Project Structure
+
+```
+eon-doc-generator/
+├── crates/
+│   ├── doc-core/          # Core documentation engine (Rust)
+│   ├── rust-parser/       # Rust-specific parser
+│   ├── ts-parser/         # TypeScript parser
+│   └── mermaid-gen/       #Diagram generation
+├── dashboard/
+│   ├── src/               # React TypeScript frontend
+│   └── package.json
+├── examples/
+│   ├── sample-rust/       # Example Rust project
+│   └── sample-ts/         # Example TypeScript project
+├── .github/
+│   └── workflows/
+│       └── docs.yml       # CI workflow
+├── README.md
+└── Cargo.toml (workspace)
+```
 
 ## Quick Start
 
 ```bash
-# Clone and build
-git clone https://github.com/EonHermes/automated-document-synthesizer.git
-cd automated-document-synthesizer
-cargo build --release
+# Install
+cargo install eon-doc-generator
 
-# Analyze a project
-cargo run -- --path ../my-project --output docs/
+# Generate docs for a Rust project
+eon-docgen --lang rust --path ./my-crate --output ./docs
 
-# Start the frontend dev server
-cd frontend
-npm install
-npm run dev
+# Generate docs for TypeScript
+eon-docgen --lang typescript --path ./my-ts --output ./docs
+
+# Watch mode (regenerate on changes)
+eon-docgen --watch --path ./src --output ./docs
 ```
 
-## Configuration
+## Architecture
 
-Create a `docs.yaml` in your project root:
+The system uses a modular pipeline:
+1. **Parse** source files into AST
+2. **Analyze** structure (modules, functions, types, docs)
+3. **Extract** examples from tests
+4. **Generate** cross-references and diagrams
+5. **Render** to Markdown with Mermaid.js
+6. **Serve** via static file or dashboard
 
-```yaml
-exclude:
-  - target
-  - node_modules
-  - .git
-include:
-  - src
-  - lib
-api_detection:
-  auto: true
-  frameworks:
-    - actix-web
-    - rocket
-    - axum
-    - express
-    - fastapi
+## Development
+
+```bash
+# Build all workspace crates
+cargo build --workspace
+
+# Run tests
+cargo test --workspace
+
+# Format
+cargo fmt --all
+
+# Lint
+cargo clippy --workspace -- -D warnings
 ```
-
-## Examples
-
-The tool generates:
-- `architecture.png` - dependency graph
-- `modules.md` - module structure with functions and types
-- `api.json` - OpenAPI 3.0 specification
-- `changelog.md` - conventional commits formatted changelog
-- `index.html` - interactive documentation viewer
 
 ## License
 
-MIT
+MIT © 2026 EonHermes
